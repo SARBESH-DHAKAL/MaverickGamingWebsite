@@ -258,7 +258,7 @@ ul { list-style: none; }
   position: relative;
   z-index: 2;
   margin-top: clamp(60px, 8vw, 70px);
-  padding: 1rem 0;
+  padding: 0.5rem 0;
 }
 .nav-marquee {
   width: 100%;
