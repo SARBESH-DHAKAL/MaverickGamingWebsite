@@ -5,9 +5,11 @@
 /* ---- SITE CONFIG (single source of truth) ---------------- */
 const CONFIG = {
   // Update these values when your contact info or domain changes
-  whatsappNumber: '447393159712',        // International format, no +
-  domain:         'https://maverickgaming.com',
-  facebook:       'maverick.gaming.822160',
+  smsNumber:       '+447393159712',
+  smsBody:         "Hey Maverick, can you help me set up an account? I'd like more information about your gaming platforms.",
+  domain:          'https://maverickgaming.com',
+  facebookUrl:     'https://www.facebook.com/maverickgaming0098',
+  messengerUrl:    'https://m.me/maverickgaming0098',
 };
 
 
@@ -112,6 +114,36 @@ const CONFIG = {
       btn.textContent = '✓ Copied!';
       setTimeout(function () { btn.textContent = 'Copy Link'; }, 2200);
     }
+  });
+})();
+
+
+/* ---- 5. WELCOME POPUP (once per session) ----------------- */
+(function () {
+  const popup = document.getElementById('welcomePopup');
+  if (!popup) return;
+
+  function showPopup() {
+    popup.style.display = 'flex';
+  }
+
+  function hidePopup() {
+    popup.style.display = 'none';
+    try { sessionStorage.setItem('welcomeShown', '1'); } catch (e) {}
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const shown = sessionStorage.getItem('welcomeShown');
+    if (!shown) setTimeout(showPopup, 800);
+
+    const closeBtn = popup.querySelector('.welcome-close');
+    const contBtn  = document.getElementById('welcomeContinue');
+    if (closeBtn) closeBtn.addEventListener('click', hidePopup);
+    if (contBtn) contBtn.addEventListener('click', hidePopup);
+    // close when clicking outside the inner card
+    popup.addEventListener('click', function (e) {
+      if (e.target === popup) hidePopup();
+    });
   });
 })();
 

@@ -1,12 +1,5 @@
 /**
  * MAVERICK GAMING — Vercel Serverless Function Proxy
- *
- * Alternative to Cloudflare Worker for Vercel deployments.
- * Steps:
- *   1. Move this file to /api/chat.js in your project root
- *   2. In Vercel dashboard → Settings → Environment Variables,
- *      add ANTHROPIC_API_KEY with your actual key
- *   3. Deploy. script.js already points to /api/chat by default.
  */
 
 export default async function handler(req, res) {
