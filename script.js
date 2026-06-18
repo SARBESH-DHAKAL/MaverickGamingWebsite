@@ -7,9 +7,9 @@ const CONFIG = {
   // Update these values when your contact info or domain changes
   smsNumber:       '+19092881465',
   smsBody:         "Hey Maverick, can you help me set up an account? I'd like more information about your gaming platforms.",
-  domain:          'https://maverickgaming.com',
+  domain:          'https://maverickgaming.games',
   facebookUrl:     'https://www.facebook.com/maverickgaming0098',
-  messengerUrl:    'https://m.me/maverickgaming0098',
+  messengerUrl:    'https://www.facebook.com/messages/t/maverickgaming0098',
 };
 
 
@@ -146,6 +146,5 @@ const CONFIG = {
     });
   });
 })();
-
 
 
